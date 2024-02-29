@@ -5,6 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entity class for Book in the borrowing service.
+ *
+ * This class represents a book with properties like id, title, author, genre, description and status.
+ * It uses Lombok annotations for boilerplate code reduction.
+ */
 @Data
 @Builder
 @NoArgsConstructor

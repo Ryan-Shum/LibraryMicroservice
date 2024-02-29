@@ -8,25 +8,44 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+/**
+ * Service class for managing books.
+ */
 @Service
 @AllArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
 
-    //Method to get all books
+    /**
+     * Fetches all books from the repository.
+     *
+     * @return a list of all books
+     */
     public List<Book> getBooks(){
         return bookRepository.findAll();
     }
 
-    //Method to get the status of a book
+    /**
+     * Fetches the status of a book with a given ID.
+     *
+     * @param bookId the ID of the book
+     * @return the status of the book
+     * @throws IllegalArgumentException if a book with the given ID does not exist
+     */
     public BookStatus getBookStatus(Long bookId) {
         return bookRepository.findById(bookId)
                 .map(Book::getStatus)
                 .orElseThrow(() -> new IllegalArgumentException("Book with id " + bookId + " not found"));
     }
 
-    //Method to update the status of a book
+    /**
+     * Updates the status of a book with a given ID.
+     *
+     * @param bookId the ID of the book
+     * @param newStatus the new status to set
+     * @return the updated book
+     * @throws IllegalArgumentException if a book with the given ID does not exist
+     */
     @Transactional
     public Book updateBookStatus(Long bookId, BookStatus newStatus) {
         Book book = bookRepository.findById(bookId)

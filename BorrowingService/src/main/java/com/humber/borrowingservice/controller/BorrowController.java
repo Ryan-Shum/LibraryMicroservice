@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controller class for managing book borrowings.
+ *
+ * This class handles HTTP requests related to borrowing and returning books.
+ */
 @RestController
 @AllArgsConstructor
 @RequestMapping("borrow")
@@ -17,13 +22,23 @@ public class BorrowController {
     private final BookClient borrowClient;
     private final BorrowingService borrowingService;
 
-    //get all books
+    /**
+     * Endpoint to get all books.
+     *
+     * @return a list of all books
+     */
     @GetMapping("/booklist")
     public List<Book> getBooks(){
        return borrowClient.getBooks();
     }
 
-    //borrow a book
+    /**
+     * Endpoint to borrow a book.
+     *
+     * @param bookId the ID of the book to borrow
+     * @return a ResponseEntity with a message and HTTP status OK if the book was borrowed successfully,
+     *         or a ResponseEntity with an error message and HTTP status BAD_REQUEST if an error occurred
+     */
     @PostMapping("/book/{bookId}/borrow")
     public ResponseEntity<String> borrowBook(@PathVariable long bookId) {
         try {
@@ -35,7 +50,13 @@ public class BorrowController {
         }
     }
 
-    //return a book
+    /**
+     * Endpoint to return a book.
+     *
+     * @param bookId the ID of the book to return
+     * @return a ResponseEntity with a message and HTTP status OK if the book was returned successfully,
+     *         or a ResponseEntity with an error message and HTTP status BAD_REQUEST if an error occurred
+     */
     @PostMapping("/book/{bookId}/return")
     public ResponseEntity<String> returnBook(@PathVariable long bookId) {
         try {
