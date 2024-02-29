@@ -16,6 +16,7 @@ public class DBSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        //Seed the database with 10 books
         List<Book> books = List.of(
                 Book.builder().title("Forrest Gump").author("Winston Groom").genre("Comedy-drama").description("The story of a man who, despite his sub-normal IQ, leads an extraordinary life.").status(BookStatus.AVAILABLE).build(),
                 Book.builder().title("To Kill a Mockingbird").author("Harper Lee").genre("Classic").description("A novel about the childhood reflections of racism and injustice in the Deep South.").status(BookStatus.LOANED).build(),

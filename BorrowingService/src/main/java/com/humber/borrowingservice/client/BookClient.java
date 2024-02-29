@@ -20,4 +20,7 @@ public interface BookClient {
     //updates the status of a book using book service endpoint
     @PutMapping("/books/{id}/status")
     void updateBookStatus(@PathVariable("id") Long id, @RequestBody BookStatus status);
+
+    @GetMapping("/books/{id}/status")
+    BookStatus getBookStatus(@PathVariable("id") Long id);
 }

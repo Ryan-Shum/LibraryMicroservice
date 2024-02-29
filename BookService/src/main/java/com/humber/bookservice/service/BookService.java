@@ -13,10 +13,20 @@ import java.util.List;
 @AllArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
+
+    //Method to get all books
     public List<Book> getBooks(){
         return bookRepository.findAll();
     }
 
+    //Method to get the status of a book
+    public BookStatus getBookStatus(Long bookId) {
+        return bookRepository.findById(bookId)
+                .map(Book::getStatus)
+                .orElseThrow(() -> new IllegalArgumentException("Book with id " + bookId + " not found"));
+    }
+
+    //Method to update the status of a book
     @Transactional
     public Book updateBookStatus(Long bookId, BookStatus newStatus) {
         Book book = bookRepository.findById(bookId)
