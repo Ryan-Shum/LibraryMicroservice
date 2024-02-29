@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Entity class for Book.
- *
+ * <p>
  * This class represents a book with properties like id, title, author, genre, description and status.
  * It uses Lombok annotations for boilerplate code reduction.
  */

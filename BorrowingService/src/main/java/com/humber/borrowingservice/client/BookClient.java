@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Feign client interface for communicating with the book-service.
- *
+ * <p>
  * This interface defines methods for fetching all books, updating the status of a book,
  * and getting the status of a book. These methods correspond to endpoints in the book-service.
  */

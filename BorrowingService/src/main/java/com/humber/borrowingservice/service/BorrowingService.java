@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Entity class for Book in the borrowing service.
- *
+ * <p>
  * This class represents a book with properties like id, title, author, genre, description and status.
  * It uses Lombok annotations for boilerplate code reduction.
  */
@@ -25,7 +25,7 @@ public class BorrowingService {
 
     /**
      * Borrows a book.
-     *
+     * <p>
      * This method checks if the book is available for borrowing, and if so, updates its status to LOANED.
      * If the book is not available, it throws an IllegalArgumentException.
      *
@@ -42,7 +42,7 @@ public class BorrowingService {
 
     /**
      * Returns a book.
-     *
+     * <p>
      * This method checks if the book is currently loaned, and if so, updates its status to AVAILABLE.
      * If the book is not loaned, it throws an IllegalArgumentException.
      *

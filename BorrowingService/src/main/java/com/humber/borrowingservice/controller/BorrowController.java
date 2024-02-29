@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Controller class for managing book borrowings.
- *
+ * <p>
  * This class handles HTTP requests related to borrowing and returning books.
  */
 @RestController

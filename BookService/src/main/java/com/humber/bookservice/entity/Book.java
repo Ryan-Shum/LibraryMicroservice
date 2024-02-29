@@ -1,8 +1,6 @@
 package com.humber.bookservice.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Entity class for Book.
- *
+ * <p>
  * This class represents a book with properties like id, title, author, genre, description and status.
  * It uses Lombok annotations for boilerplate code reduction.
  */
